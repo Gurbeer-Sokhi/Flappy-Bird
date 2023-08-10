@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     let leftInterval;
-    if (ISstart && objPos >= -OBJ_WIDTH) {
+    if (ISstart && objPos >= -OBJ_WIDTH + 100) {
       leftInterval = setInterval(() => {
         setobjPos((objPos) => objPos - OBJ_SPEED);
       }, 24);
