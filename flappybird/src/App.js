@@ -27,7 +27,7 @@ function App() {
     }
 
     return () => clearInterval(birdval);
-  });
+  }, [ISstart, birdpos]);
 
   useEffect(() => {
     let leftInterval;
@@ -53,7 +53,7 @@ function App() {
       setBirdpos(300);
       setscore(0);
     }
-  });
+  }, [ISstart, objPos]);
 
   const handler = () => {
     if (!ISstart) setISstart(true);
