@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import React from "react";
+import styled from "styled-components";
+const WALL_HEIGHT = 600;
+const WALL_WIDTH = 400;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Home>
+      <Background height={WALL_HEIGHT} width={WALL_WIDTH}>
+        <Bird />
+      </Background>
+    </Home>
   );
 }
 
 export default App;
+const Home = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-center: center;
+  align-items: center;
+`;
+const Background = styled.div`
+  background-image: url("./images/background-day.png");
+  background-repeat: no-repeat;
+  background-size: ${(props) => props.width}px ${(props) => props.height}px;
+  width: ${(props) => props.width}px;
+`;
+const Bird = styled.div``;
